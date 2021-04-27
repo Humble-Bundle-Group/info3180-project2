@@ -1164,8 +1164,8 @@ const Home = {
                     United Auto Sales provides the fastest, easiest and most user friendly way to buy or
                     sell cars online. Find a great price on the vehicle <strong>you</strong> want.
                 </p>
-                <button class = "landing-btn" id = "landing-reg"><router-link to="/register">Sign Up<span class="sr-only">(current)</span></router-link></button>
-                <button class = "landing-btn" id = "landing-log"><router-link to="/login">Login<span class="sr-only">(current)</span></router-link></button>
+                <button class = "landing-btn" id = "landing-reg"><router-link to="/register">Sign Up</router-link></button>
+                <button class = "landing-btn" id = "landing-log"><router-link to="/login">Login</router-link></button>
                 <button class = "landing-btn" @click="removeToken">Log Out</button>
             </div>
             <div id = "landing-img">
