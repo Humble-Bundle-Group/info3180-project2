@@ -1161,7 +1161,7 @@ const Home = {
                 <button class = "landing-btn" id = "landing-log">Login</button>
             </div>
             <div id = "landing-img">
-                <img id = "index-img" style = "object-fit: cover;" src="../static/images/home.jpg"/>
+                <img id = "index-img" style = "object-fit: cover;" src="../static/assets/home.jpg"/>
             </div>
             
         </div>
