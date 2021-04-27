@@ -81,14 +81,8 @@ app.component('app-header', {
       </div>
     </nav>
     */
-    methods: {
-        removeToken() {
-            localStorage.removeItem("token");
-            localStorage.removeItem("user_id");
-            console.info("Token removed from localStorage.");
-            alert("You were logged out!");
-        }
-        
+    methods: {      
+
         logout(){
             fetch("/api/auth/logout", {
                 method: "POST",
