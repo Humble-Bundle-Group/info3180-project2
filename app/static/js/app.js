@@ -119,6 +119,7 @@ app.component('app-footer', {
 
 const LoginForm = {
     template: `
+            <title>Login</title>
             <link rel = "stylesheet" href = "../static/css/login.css" type = "text/css"/>
             <main>
                 <div id = "background">
@@ -204,6 +205,7 @@ const LoginForm = {
 
 const RegisterForm = {
     template: `
+            <title>Registration</title>
             <link rel = "stylesheet" href = "../static/css/register.css" type = "text/css"/>
             <main>
                 <div id = "background">
@@ -308,6 +310,7 @@ const RegisterForm = {
 
 const CarForm = {
     template: `
+    <title>Upload Car</title>
     
     <!--<form method="post" enctype ="multipart/form-data" id = "carForm"  @submit.prevent="uploadCar">
 
@@ -491,7 +494,9 @@ const CarForm = {
 
 const ViewCar = {
     name: 'ViewCar',
-    template: `<!--<div class="carDiv">
+    template: `
+            <title>Car Profile</title>
+            <!--<div class="carDiv">
             <h2>This Car</h2>
             <div>
             <img v-bind:src=getImgUrl(car_data.photo)>
@@ -657,7 +662,9 @@ const ViewCar = {
 const ViewUser = {
     name: 'ViewUser',
     
-    template: `<!--<div class="userDiv">
+    template: `
+            <title>Profile</title>
+            <!--<div class="userDiv">
             <h2>User: {{ user_data.username }}</h2>
             <div>
             <img v-bind:src=getImgUrl(user_data.photo)>
@@ -859,6 +866,7 @@ const ViewUser = {
 const ViewCars = {
     name: 'ViewCars',
     template: `
+        <title>Explore</title>
         <!--<div class="carsDiv">
                 <div v-for="car in cars" >
                     
@@ -1023,6 +1031,7 @@ const ViewCars = {
 const SearchResults = {
     name: 'SearchResults',
     template: `
+        <title>search</title>
         <!--<div class="carsDiv">
                 <div v-for="car in cars" >
                     
@@ -1128,13 +1137,38 @@ const SearchResults = {
 const Home = {
     name: 'Home',
     template: `
-    <div class="jumbotron">
-        <h1>Project 2</h1>
-        <p class="lead">In this lab we will demonstrate VueJS working with Forms and Form Validation from Flask-WTF.</p>
-            <button><router-link class="nav-link" to="/login">Login<span class="sr-only">(current)</span></router-link></button>
-            <button><router-link class="nav-link" to="/register">Sign Up<span class="sr-only">(current)</span></router-link></button>
-            <button @click="removeToken">Log Out</button>
-    </div>
+    <head>
+        <!--{% include "base.html" %}-->
+        <title>Home Page
+        
+        </title>
+        
+        <link rel = 'stylesheet' href= '../static/css/index.css'/>        
+        
+    </head>
+    <body>
+        <!--
+        {% block main %}
+        -->        
+        <div id = "index">
+            <div id = "landing-info">
+                <h1>Buy and Sell Cars Online</h1>
+                <p id ="website-bio">
+                    United Auto Sales provides the fastest, easiest and most user friendly way to buy or
+                    sell cars online. Find a great price on the vehicle <strong>you</strong> want.
+                </p>
+                <button class = "landing-btn" id = "landing-reg">Register</button>
+                <button class = "landing-btn" id = "landing-log">Login</button>
+            </div>
+            <div id = "landing-img">
+                <img id = "index-img" style = "object-fit: cover;" src="../static/images/home.jpg"/>
+            </div>
+            
+        </div>
+        <!--
+        {% end block %}
+        -->
+    </body>
     
 
     `,
