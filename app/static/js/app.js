@@ -50,7 +50,7 @@ app.component('app-header', {
                             <span class = "nav-item logged-in"><a href = "/users/{user_id}">My Profile</a></span>
                             <span class = "account-ctrls logged-out" id = "/login"><a href = "/login">Login</a></span>
                             <span class = "account-ctrls logged-out" id = "/register"><a href = "/register">Register</a></span>
-                            <span @click = "removeToken" class = "account-ctrls logged-in" id = "/logout">Logout<router-link class="nav-link" to="/"></router-link></span>
+                            <span @click = "removeToken" class = "account-ctrls logged-in" id = "/logout">Logout<router-link to="/"></router-link></span>
                         </header>    
                     </div>
                     
@@ -1164,8 +1164,8 @@ const Home = {
                     United Auto Sales provides the fastest, easiest and most user friendly way to buy or
                     sell cars online. Find a great price on the vehicle <strong>you</strong> want.
                 </p>
-                <button class = "landing-btn" id = "landing-reg"><router-link class="nav-link" to="/register">Sign Up<span class="sr-only">(current)</span></router-link></button>
-                <button class = "landing-btn" id = "landing-log"><router-link class="nav-link" to="/login">Login<span class="sr-only">(current)</span></router-link></button>
+                <button class = "landing-btn" id = "landing-reg"><router-link to="/register">Sign Up<span class="sr-only">(current)</span></router-link></button>
+                <button class = "landing-btn" id = "landing-log"><router-link to="/login">Login<span class="sr-only">(current)</span></router-link></button>
                 <button class = "landing-btn" @click="removeToken">Log Out</button>
             </div>
             <div id = "landing-img">
