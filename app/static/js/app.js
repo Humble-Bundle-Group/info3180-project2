@@ -50,7 +50,7 @@ app.component('app-header', {
                             <span class = "nav-item logged-in"><a href = "/users/{user_id}">My Profile</a></span>
                             <span class = "account-ctrls logged-out" id = "/login"><a href = "/login">Login</a></span>
                             <span class = "account-ctrls logged-out" id = "/register"><a href = "/register">Register</a></span>
-                            <span @click = "removeToken" class = "account-ctrls logged-in" id = "/logout">Logout<router-link to="/"></router-link></span>
+                            <span @click = "logout" class = "account-ctrls logged-in" id = "/logout"><a href = "/auth/logout">Logout</a></span>
                         </header>    
                     </div>
                     
@@ -82,13 +82,6 @@ app.component('app-header', {
     </nav>
     */
     methods: {
-        removeToken() {
-            localStorage.removeItem("token");
-            localStorage.removeItem("user_id");
-            console.info("Token removed from localStorage.");
-            alert("You were logged out!");
-        }
-
         logout(){
             fetch("/api/auth/logout", {
                 method: "POST",
@@ -126,7 +119,6 @@ app.component('app-footer', {
 
 const LoginForm = {
     template: `
-            <title>Login</title>
             <link rel = "stylesheet" href = "../static/css/login.css" type = "text/css"/>
             <main>
                 <div id = "background">
@@ -212,7 +204,6 @@ const LoginForm = {
 
 const RegisterForm = {
     template: `
-            <title>Registration</title>
             <link rel = "stylesheet" href = "../static/css/register.css" type = "text/css"/>
             <main>
                 <div id = "background">
@@ -317,7 +308,6 @@ const RegisterForm = {
 
 const CarForm = {
     template: `
-    <title>Upload Car</title>
     
     <!--<form method="post" enctype ="multipart/form-data" id = "carForm"  @submit.prevent="uploadCar">
 
@@ -501,9 +491,7 @@ const CarForm = {
 
 const ViewCar = {
     name: 'ViewCar',
-    template: `
-            <title>Car Profile</title>
-            <!--<div class="carDiv">
+    template: `<!--<div class="carDiv">
             <h2>This Car</h2>
             <div>
             <img v-bind:src=getImgUrl(car_data.photo)>
@@ -669,9 +657,7 @@ const ViewCar = {
 const ViewUser = {
     name: 'ViewUser',
     
-    template: `
-            <title>Profile</title>
-            <!--<div class="userDiv">
+    template: `<!--<div class="userDiv">
             <h2>User: {{ user_data.username }}</h2>
             <div>
             <img v-bind:src=getImgUrl(user_data.photo)>
@@ -873,7 +859,6 @@ const ViewUser = {
 const ViewCars = {
     name: 'ViewCars',
     template: `
-        <title>Explore</title>
         <!--<div class="carsDiv">
                 <div v-for="car in cars" >
                     
@@ -1038,7 +1023,6 @@ const ViewCars = {
 const SearchResults = {
     name: 'SearchResults',
     template: `
-        <title>search</title>
         <!--<div class="carsDiv">
                 <div v-for="car in cars" >
                     
@@ -1146,17 +1130,31 @@ const Home = {
     template: `
     <head>
         <!--{% include "base.html" %}-->
-        <title>Home Page
+        <title>
         
         </title>
-        
+        <!--
+        {% block css %}
+        -->
         <link rel = 'stylesheet' href= '../static/css/index.css'/>        
-        
+        <!--
+        {% end block %}
+        -->
     </head>
     <body>
         <!--
         {% block main %}
-        -->        
+        -->
+        <div id = "navbar">
+            <header>
+                <i id = "car" class = "fa fa-car"></i>
+                <span id = "business-name" class = "navbar-text">United Auto Sales</span>
+                
+                <span class = "account-ctrls logged-out" id = "login"><a href = "{{url_for('login')}}">Login</a></span>
+                <span class = "account-ctrls logged-out" id = "register"><a href = "{{url_for('register')}}">Register</a></span>
+                
+            </header>    
+        </div>
         <div id = "index">
             <div id = "landing-info">
                 <h1>Buy and Sell Cars Online</h1>
@@ -1164,9 +1162,8 @@ const Home = {
                     United Auto Sales provides the fastest, easiest and most user friendly way to buy or
                     sell cars online. Find a great price on the vehicle <strong>you</strong> want.
                 </p>
-                <button class = "landing-btn" id = "landing-reg"><router-link to="/register">Sign Up</router-link></button>
-                <button class = "landing-btn" id = "landing-log"><router-link to="/login">Login</router-link></button>
-                <button class = "landing-btn" @click="removeToken">Log Out</button>
+                <button class = "landing-btn" id = "landing-reg">Register</button>
+                <button class = "landing-btn" id = "landing-log">Login</button>
             </div>
             <div id = "landing-img">
                 <img id = "index-img" style = "object-fit: cover;" src="../static/assets/home.jpg"/>
