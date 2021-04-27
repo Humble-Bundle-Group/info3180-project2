@@ -50,7 +50,7 @@ app.component('app-header', {
                             <span class = "nav-item logged-in"><a href = "/users/{user_id}">My Profile</a></span>
                             <span class = "account-ctrls logged-out" id = "/login"><a href = "/login">Login</a></span>
                             <span class = "account-ctrls logged-out" id = "/register"><a href = "/register">Register</a></span>
-                            <span @click = "removeToken" class = "account-ctrls logged-in" id = "/logout"><router-link to="/">Logout</router-link></span>
+                            <span @click = "logout" class = "account-ctrls logged-in" id = "/logout"><a href = "/auth/logout">Logout</a></span>
                         </header>    
                     </div>
                     
@@ -88,7 +88,7 @@ app.component('app-header', {
             console.info("Token removed from localStorage.");
             alert("You were logged out!");
         }
-
+        
         logout(){
             fetch("/api/auth/logout", {
                 method: "POST",
