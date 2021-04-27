@@ -1144,17 +1144,7 @@ const Home = {
     <body>
         <!--
         {% block main %}
-        -->
-        <div id = "navbar">
-            <header>
-                <i id = "car" class = "fa fa-car"></i>
-                <span id = "business-name" class = "navbar-text">United Auto Sales</span>
-                
-                <span class = "account-ctrls logged-out" id = "login"><a href = "{{url_for('login')}}">Login</a></span>
-                <span class = "account-ctrls logged-out" id = "register"><a href = "{{url_for('register')}}">Register</a></span>
-                
-            </header>    
-        </div>
+        -->        
         <div id = "index">
             <div id = "landing-info">
                 <h1>Buy and Sell Cars Online</h1>
@@ -1162,8 +1152,8 @@ const Home = {
                     United Auto Sales provides the fastest, easiest and most user friendly way to buy or
                     sell cars online. Find a great price on the vehicle <strong>you</strong> want.
                 </p>
-                <button class = "landing-btn" id = "landing-reg">Register</button>
-                <button class = "landing-btn" id = "landing-log">Login</button>
+                <button class = "landing-btn" id = "landing-reg"><router-link to="/register">Sign Up</router-link></button>
+                <button class = "landing-btn" id = "landing-log"><router-link to="/login">Login</router-link></button>
             </div>
             <div id = "landing-img">
                 <img id = "index-img" style = "object-fit: cover;" src="../static/assets/home.jpg"/>
