@@ -99,13 +99,7 @@ app.component('app-header', {
                 window.location.href = "/login/"
             })
         }
-
-        removeToken1() {
-            localStorage.removeItem("token");
-            localStorage.removeItem("user_id");
-            console.info("Token removed from localStorage.");
-            alert("Token removed!");
-        }   
+  
     }
 });
 
