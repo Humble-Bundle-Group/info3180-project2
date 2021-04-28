@@ -50,7 +50,7 @@ app.component('app-header', {
                             <span class = "nav-item logged-in"><a href = "/users/{user_id}">My Profile</a></span>
                             <span class = "account-ctrls logged-out" id = "/login"><a href = "/login">Login</a></span>
                             <span class = "account-ctrls logged-out" id = "/register"><a href = "/register">Register</a></span>
-                            <span @click = "logout" class = "account-ctrls logged-in" id = "/logout"><a href = "/auth/logout">Logout</a></span>
+                            <span @click = "logout" class = "account-ctrls logged-in" id = "/logout"><a href = "/">Logout</a></span>
                         </header>    
                     </div>
                     
