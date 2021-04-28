@@ -19,6 +19,6 @@ login_manager.login_view = 'login'
 csrf = CSRFProtect(app)
 
 app.config.from_object(Config)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://lckbgmjqfetmex:0a2194f1ddee0d36092ec2619277b36859ddea2b67b7f5c31a095dce49df5b5e@ec2-34-225-167-77.compute-1.amazonaws.com:5432/d4n8aq3g6ifem'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://oiguqlhppndfnu:532fd265fd989e6d22687b67e785e8940a7dc60e7706a2dcfb24c37362ffe48f@ec2-54-163-254-204.compute-1.amazonaws.com:5432/df8hi9r1s7a3m0'
 
 from app import views
