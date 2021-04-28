@@ -93,13 +93,16 @@ app.component('app-header', {
                 credentials: 'same-origin'
             })
             .then(function (response) {
+                localStorage.removeItem("token");
+                localStorage.removeItem("user_id");
+                alert("Token removed!");
                 return response.json();
             })
             .then(function (response) {
-                window.location.href = "/login/"
+                window.location.href = "/"
             })
         }
-  
+        
     }
 });
 
