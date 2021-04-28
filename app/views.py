@@ -110,7 +110,14 @@ def logout():
             "message": "Log out successful"
         }
         flash("You have been logged out.", "danger")
-        return redirect("/login")
+        data = {
+                    "message": "Logged out!",                    
+                }  
+        return jsonify(data)
+        
+    error = "Incorrect username or password."
+    return jsonify(error=error)
+        
     
 
 
