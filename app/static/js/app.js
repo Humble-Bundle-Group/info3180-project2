@@ -82,7 +82,7 @@ app.component('app-header', {
     </nav>
     */
     methods: { 
-        removeToken() {
+        removeToken1() {
             localStorage.removeItem("token");
             localStorage.removeItem("user_id");
             console.info("Token removed from localStorage.");
